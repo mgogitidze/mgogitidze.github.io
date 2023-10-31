@@ -30,10 +30,18 @@
         left: 38px;
     }
 </style>
+<script>
+    var eloElement = document.getElementById("elo")
+    fetch('https://open.faceit.com/data/v4/players?nickname=Cocs&game=cs2',{
+        headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
+    })
+        .then(response => response.json())
+        .then(data => eloElement.textContent = data.games.cs2.faceit_elo);
+</script>
 <body>
 <div id="wrapper">
     <img id="levelpic" src="https://cdn-frontend.faceit.com/web/960/src/app/assets/images-compress/skill-icons/skill_level_10_svg.svg">
-    <div id="elo">1234</div>
+    <div id="elo"></div>
 </div>
 </body>
 </html>
