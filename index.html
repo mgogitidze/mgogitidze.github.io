@@ -32,8 +32,14 @@
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
+        fetch('https://open.faceit.com/data/v4/players?nickname=1mpala&game=cs2',{
+            headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
+        })
+            .then(response => response.json())
+            .then(function(data) {
+                document.getElementById("elo").innerHTML = data.games.cs2.faceit_elo});
         setInterval(function (){
-            fetch('https://open.faceit.com/data/v4/players?nickname=Cocs&game=cs2',{
+            fetch('https://open.faceit.com/data/v4/players?nickname=1mpala&game=cs2',{
                 headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
             })
                 .then(response => response.json())
