@@ -36,7 +36,7 @@
         headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
     })
         .then(response => response.json())
-        .then(data => eloElement.textContent = data.games.cs2.faceit_elo);
+        .then(data => eloElement.innerHTML = data.games.cs2.faceit_elo);
 </script>
 <body>
 <div id="wrapper">
