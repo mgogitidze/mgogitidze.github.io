@@ -31,12 +31,15 @@
     }
 </style>
 <script>
-    var eloElement = document.getElementById("elo")
-    fetch('https://open.faceit.com/data/v4/players?nickname=Cocs&game=cs2',{
-        headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
-    })
-        .then(response => response.json())
-        .then(data => eloElement.innerHTML = data.games.cs2.faceit_elo);
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var eloElement = document.getElementById("elo")
+        fetch('https://open.faceit.com/data/v4/players?nickname=Cocs&game=cs2',{
+            headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
+        })
+            .then(response => response.json())
+            .then(data => eloElement.innerHTML = data.games.cs2.faceit_elo);
+    });
+
 </script>
 <body>
 <div id="wrapper">
